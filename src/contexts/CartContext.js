@@ -19,11 +19,17 @@ const CartContextProvider = ({ children }) => {
   }
 
   const removeFromCart = (id) => {
+    const product = cart.find((product) => product.id === id)
+    productContext.addItem(product)
     dispatch(functions.removeFromCart(id))
-    // TODO: add item back to items
   }
 
-  const emptyCart = () => dispatch(functions.emptyCart())
+  const emptyCart = () => {
+    cart.forEach((product) => {
+      productContext.addItem(product)
+    })
+    dispatch(functions.emptyCart())
+  }
 
   const cartTotal = () => {
     return cart
