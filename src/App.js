@@ -1,15 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Route } from 'react-router-dom'
-import data from './data'
 
 // Components
 import Navigation from './components/Navigation'
 import Products from './components/Products'
 import ShoppingCart from './components/ShoppingCart'
 
+import { useCartContext } from './hooks/useCartContext'
+
 function App() {
-  const [products] = useState(data)
-  const [cart, setCart] = useState([])
+  const { products, cart, setCart } = useCartContext()
 
   const addItem = (item) => {
     // add the given item to the cart
