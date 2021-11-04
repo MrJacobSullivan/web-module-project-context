@@ -4,10 +4,12 @@ import data from '../data'
 const ProductContext = createContext()
 
 const ProductContextProvider = ({ children }) => {
-  const [products] = useState(data)
+  const [products, addProduct] = useState(data)
 
   return (
-    <ProductContext.Provider values={{ products }}>{children}</ProductContext.Provider>
+    <ProductContext.Provider values={{ products, addProduct }}>
+      {children}
+    </ProductContext.Provider>
   )
 }
 

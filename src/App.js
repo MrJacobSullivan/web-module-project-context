@@ -6,26 +6,18 @@ import Navigation from './components/Navigation'
 import Products from './components/Products'
 import ShoppingCart from './components/ShoppingCart'
 
-import { useCartContext } from './hooks/useProductContext'
-
 function App() {
-  const { products, cart, setCart } = useCartContext()
-
-  const addItem = (item) => {
-    // add the given item to the cart
-  }
-
   return (
     <div className='App'>
-      <Navigation cart={cart} />
+      <Navigation />
 
       {/* Routes */}
       <Route exact path='/'>
-        <Products products={products} addItem={addItem} />
+        <Products />
       </Route>
 
       <Route path='/cart'>
-        <ShoppingCart cart={cart} />
+        <ShoppingCart />
       </Route>
     </div>
   )
