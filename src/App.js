@@ -6,7 +6,7 @@ import Navigation from './components/Navigation'
 import Products from './components/Products'
 import ShoppingCart from './components/ShoppingCart'
 
-import { useCartContext } from './hooks/useCartContext'
+import { useCartContext } from './hooks/useProductContext'
 
 function App() {
   const { products, cart, setCart } = useCartContext()
