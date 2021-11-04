@@ -1,6 +1,6 @@
 import React, { useReducer, createContext } from 'react'
-import { reducer, initialState } from '../lib/reducers/cartReducer'
-import { functions } from '../lib/actions/cartActions'
+import { reducer, initialState } from '../lib/reducers/productsReducer'
+import { functions } from '../lib/actions/productsActions'
 
 const ProductContext = createContext()
 
@@ -11,7 +11,7 @@ const ProductContextProvider = ({ children }) => {
   const removeItem = (item) => dispatch(functions.addItem(item))
 
   return (
-    <ProductContext.Provider values={{ products, addItem, removeItem }}>
+    <ProductContext.Provider value={{ products, addItem, removeItem }}>
       {children}
     </ProductContext.Provider>
   )

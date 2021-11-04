@@ -1,5 +1,5 @@
 import { ACTIONS } from '../actions/productsActions'
-import data from '../data'
+import data from '../../data'
 
 const initialState = data
 

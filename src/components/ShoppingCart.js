@@ -6,15 +6,7 @@ import Item from './ShoppingCartItem'
 import { useCartContext } from '../hooks/useCartContext'
 
 const ShoppingCart = () => {
-  const { cart } = useCartContext()
-
-  const getCartTotal = () => {
-    return cart
-      .reduce((acc, value) => {
-        return acc + value.price
-      }, 0)
-      .toFixed(2)
-  }
+  const { cart, cartTotal } = useCartContext()
 
   return (
     <div className='shopping-cart'>
@@ -23,7 +15,7 @@ const ShoppingCart = () => {
       ))}
 
       <div className='shopping-cart__checkout'>
-        <p>Total: ${getCartTotal()}</p>
+        <p>Total: ${cartTotal}</p>
         <button>Checkout</button>
       </div>
     </div>
