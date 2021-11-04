@@ -5,7 +5,7 @@ const ACTIONS = {
 
 const functions = {
   addItem: (item) => ({ type: ACTIONS.ADD_ITEM, payload: item }),
-  removeItem: (item) => ({ type: ACTIONS.REMOVE_ITEM, payload: item }),
+  removeItem: (id) => ({ type: ACTIONS.REMOVE_ITEM, payload: id }),
 }
 
 export { ACTIONS, functions }

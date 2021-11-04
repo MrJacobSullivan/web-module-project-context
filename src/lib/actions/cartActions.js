@@ -6,7 +6,7 @@ const ACTIONS = {
 
 const functions = {
   addToCart: (item) => ({ type: ACTIONS.ADD_TO_CART, payload: item }),
-  removeFromCart: (item) => ({ type: ACTIONS.REMOVE_FROM_CART, payload: item }),
+  removeFromCart: (id) => ({ type: ACTIONS.REMOVE_FROM_CART, payload: id }),
   emptyCart: () => ({ type: ACTIONS.EMPTY_CART }),
 }
 

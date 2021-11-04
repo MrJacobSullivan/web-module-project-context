@@ -15,7 +15,7 @@ const ShoppingCart = () => {
       ))}
 
       <div className='shopping-cart__checkout'>
-        <p>Total: ${cartTotal}</p>
+        <p>Total: ${cartTotal()}</p>
         <button>Checkout</button>
       </div>
     </div>
