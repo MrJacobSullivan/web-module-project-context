@@ -1,17 +1,17 @@
 import { ACTIONS } from '../actions/cartActions'
 
-const initialState = {}
+const initialState = []
 
 const reducer = (state, action) => {
   switch (action.type) {
     case ACTIONS.ADD_TO_CART:
-      return null
+      return [...state, action.payload]
 
     case ACTIONS.REMOVE_FROM_CART:
-      return null
+      return state.filter((item) => item.id !== action.payload.id)
 
     case ACTIONS.EMPTY_CART:
-      return null
+      return initialState
 
     default:
       return state
